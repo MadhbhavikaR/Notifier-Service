@@ -1,0 +1,17 @@
+[Unit]
+Description=DietPi Update Notification Service
+After=network-online.target
+Wants=udev.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=dietpi
+RemainAfterExit=yes
+WorkingDirectory=/home/dietpi/dietpi-notifier
+EnvironmentFile=/home/dietpi/dietpi-notifier/dietpi-notifier.env
+ExecStart=/home/dietpi/dietpi-notifier-env/bin/python $DIETPI_NOTIFIER_ARGS
+Restart=always
+RestartSec=10
