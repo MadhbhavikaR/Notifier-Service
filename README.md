@@ -133,6 +133,8 @@ systemctl enable update_check_notifier.service
 systemctl start update_check_notifier.service
 ```
 ```sh
-virtualenv -p /usr/bin/python3 ../dietpi-notifier-env
+wget https://bootstrap.pypa.io/virtualenv.pyz
+python3 virtualenv.pyz -p /usr/bin/python3 Notifier-Service-env
+
 sudo nano /etc/systemd/system/update_check_notifier.service
 ```
